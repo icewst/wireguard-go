@@ -5,6 +5,7 @@
 
 package device
 
+import "C"
 import (
 	"runtime"
 	"sync"
@@ -290,6 +291,8 @@ func NewDevice(tunDevice tun.Device, bind conn.Bind, logger *Logger) *Device {
 	device.net.bind = bind
 	device.tun.device = tunDevice
 	mtu, err := device.tun.device.MTU()
+
+	logger.Verbosef("wst666666 Attaching to interface %v", "name")
 
 	device.log.Errorf("wst666666 determining MTU, assuming default: %v", err)
 
